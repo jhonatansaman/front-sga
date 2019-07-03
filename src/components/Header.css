@@ -1,0 +1,33 @@
+header#main-header {
+    background: #142B70;
+    height: 100px;
+    border-bottom: 1px solid #DDD;
+}
+
+header#main-header .header-content {
+    width: 100%;
+    max-width: 980px;
+    /* margin: 0 auto; */
+    height: 72px;
+    /* padding: 0 30px; */
+
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; alinha um item totalemnte a esq e outro a dir */
+}
+
+#logoUfsc {
+    width: 80px;
+    height: 80px;
+    margin-left: 6%;
+    margin-top: 2%;
+}
+
+#titulo {
+    /* display: flex; */
+    font-size: 22px;
+    margin-left: 15%;
+    color: #fff;
+    margin-top: 3%;
+    font-family: Arial, Helvetica, sans-serif;
+}

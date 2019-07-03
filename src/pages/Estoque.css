@@ -1,0 +1,30 @@
+#estoque {
+}
+
+#conteudo {
+    text-align: center;
+    /* margin-left: 140px; */
+    
+
+}
+
+#tituloNav{
+    margin-top: 2%;
+}
+
+#cadastrarItem{
+    margin-top: 2%;
+    display: flexbox;
+}
+
+#inputCadastroItem{
+    margin-top: 20px;
+}
+
+#btnAdicionar{
+    margin-top: 10px;
+}
+
+#tabela{
+    margin-left: 500px;
+}
