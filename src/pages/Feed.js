@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import Modal from 'react-modal';
-import Button from 'react-bootstrap/Button';
+// import Modal from 'react-modal';
+// import Button from 'react-bootstrap/Button';
 import FormGroup from 'react-bootstrap/FormGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import { Link } from 'react-router-dom';
 import  { Redirect } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import { Modal, Form } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // import ControlLabel from 'react-bootstrap/Control';
 
@@ -32,6 +36,8 @@ class Feed extends Component {
         feed: [],
         siape: '',
         senha: '',
+        modalShow: false,
+
     }
 
     constructor() {
@@ -103,6 +109,8 @@ class Feed extends Component {
     }
 
     render() {
+        let modalClose = () => this.setState({ modalShow: false });
+
         return (
             <html>
                 <header id="main-header">
@@ -112,55 +120,48 @@ class Feed extends Component {
                     </div>
                 </header>
                 <section id="testebody">
+            
 
-                    <Modal
-                        isOpen={this.state.modalIsOpen}
-                        onAfterOpen={this.afterOpenModal}
-                        onRequestClose={this.closeModal}
-                        style={customStyles}
-                        contentLabel="Example Modal"
-                    // ariaHideApp={false}
-                    >
+                <Modal
+                    // {...this.props}
+                    size="lg"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                    show={this.state.modalShow}
+                    onHide={modalClose}
+                >
+                    <Modal.Header closeButton>
+                        <Modal.Title id="contained-modal-title-vcenter" className="tituloModal">
+                            Login
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Form>
+                            <Form.Group controlId="formBasicEmail">
+                                <Form.Label>SIAPE</Form.Label>
+                                <Form.Control type="`siape`" onChange={this.updateInput} placeholder="Entre com seu SIAPE ou e-mail" />
+                                <Form.Text className="text-muted">
+                                    Nós não compartinhamos seu SIAPE ou e-mail com ninguém.
+                            </Form.Text>
+                            </Form.Group>
 
-                        <h2 ref={subtitle => this.subtitle = subtitle}>Login</h2>
-                        <button onClick={this.closeModal}>close</button>
-                        <div className="Login">
-                            <form>
-                                <label>SIAPE</label>
-                                <FormGroup controlId="email" bsSize="large">
-
-                                    <FormControl
-                                        autoFocus
-                                        type="siape"
-                                        value={this.state.email}
-                                        onChange={this.updateInput}
-                                    />
-                                </FormGroup>
-                                <label>Senha</label>
-                                <FormGroup controlId="password" bsSize="large">
-                                    {/* <ControlLabel>Password</ControlLabel> */}
-                                    <FormControl
-                                        value={this.state.password}
-                                        type="password"
-                                        onChange={this.updateInput2}
-                                    />
-                                </FormGroup>
-                                    <Button
-                                        block
-                                        bsSize="large"
-                                        // disabled={!this.validateForm()}
-                                        // type="submit"
-                                        onClick={this.testar}
-                                    >
-
-                                        Login
-                                </Button>
-                            </form>
-                        </div>
-                    </Modal>
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Senha</Form.Label>
+                                <Form.Control onChange={this.updateInput2} type="password" placeholder="Senha" / >
+                            </Form.Group>
+                            <Button variant="primary" onClick={this.testar}>
+                                Entrar
+                            </Button>
+                        </Form>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={this.props.onHide}>Fechar</Button>
+                    </Modal.Footer>
+                </Modal>
+                   
                     <div id="container">
                         <div id="s1">
-                            <p id="subtitle" ><a id="link" onClick={() => this.openModal()}>ALMOXARIFADO</a></p>
+                            <p id="subtitle" ><a id="link" onClick={() => this.setState({ modalShow: true })}>ALMOXARIFADO</a></p>
                         </div>
                         <div id="s2">
                             <p id="subtitle" ><a id="link" onClick={() => this.testar()}>EMPRÉSTIMO DE MATERIAIS</a></p>

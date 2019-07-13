@@ -12,12 +12,16 @@
     margin-left: -150px;
     left: 50px;
     width: 0px;
-    background: #142b70;
+    background: #00366d;
     position: fixed;
     height: 100%;
     z-index: 10000;
     top: 0px;
    
+}
+
+#navLink{
+    color: #00366d;
 }
 
 .sidebar-nav {
@@ -95,10 +99,13 @@
     
 }
 
+#navBoot{
+    background-color:  #1C5CBC;
+}
+
 #navbar{
-    background-color: #fee300;
+    background-color: #ffe200;
     height: 50px;
-    
 }
 
 #btn{
@@ -161,3 +168,28 @@
     position: fixed;
 }
 }
+
+/* #conteudo{
+    padding: 20px;
+    padding-bottom: 50px;
+} */
+
+/* #footer{
+    border: 1px solid gray;
+    height: 80px;
+} */
+
+  /* html {
+    height: 100%;
+  }
+
+  body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  } */
+/* 
+  .footer {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  } */

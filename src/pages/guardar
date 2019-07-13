@@ -1,0 +1,45 @@
+ <Modal
+                        isOpen={this.state.modalIsOpen}
+                        onAfterOpen={this.afterOpenModal}
+                        onRequestClose={this.closeModal}
+                        style={customStyles}
+                        contentLabel="Example Modal"
+                    // ariaHideApp={false}
+                    >
+
+                        <h2 ref={subtitle => this.subtitle = subtitle}>Login</h2>
+                        <button onClick={this.closeModal}>close</button>
+                        <div className="Login">
+                            <form>
+                                <label>SIAPE</label>
+                                <FormGroup controlId="email" bsSize="large">
+
+                                    <FormControl
+                                        autoFocus
+                                        type="siape"
+                                        value={this.state.email}
+                                        onChange={this.updateInput}
+                                    />
+                                </FormGroup>
+                                <label>Senha</label>
+                                <FormGroup controlId="password" bsSize="large">
+                                    {/* <ControlLabel>Password</ControlLabel> */}
+                                    <FormControl
+                                        value={this.state.password}
+                                        type="password"
+                                        onChange={this.updateInput2}
+                                    />
+                                </FormGroup>
+                                    <Button
+                                        block
+                                        bsSize="large"
+                                        // disabled={!this.validateForm()}
+                                        // type="submit"
+                                        onClick={this.testar}
+                                    >
+
+                                        Login
+                                </Button>
+                            </form>
+                        </div>
+                    </Modal>

@@ -1,0 +1,18 @@
+.formulario{ 
+    margin-top: 2%;
+    margin-left: 10%;
+    width: 80%
+}
+
+.titulo{
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 22px;
+    color: rgb(75, 75, 75);
+    margin-right: 70px;
+}
+
+#navbar{
+    justify-content: center; 
+    align-items: center;
+}

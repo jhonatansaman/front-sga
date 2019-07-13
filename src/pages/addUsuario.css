@@ -1,0 +1,25 @@
+#navLink{
+    color: #00366d;
+}
+
+p{
+    color:  #00366d;
+}
+
+#adicionarUser{
+    border: 1px solid black
+}
+
+.mr-auto{
+    margin-left: 10%
+}
+
+#conteudoUsuario{
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+    margin-bottom: 15%;
+    margin-left: 5%;
+    /* margin-left: 15%; */
+    /* margin-right: 15%; */
+}

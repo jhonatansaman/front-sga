@@ -2,9 +2,11 @@
 }
 
 #conteudo {
+    justify-content: center;
     text-align: center;
     /* margin-left: 140px; */
-    
+    /* margin-left: 15%; */
+    /* margin-right: 10%; */
 
 }
 
@@ -13,8 +15,8 @@
 }
 
 #cadastrarItem{
-    margin-top: 2%;
-    display: flexbox;
+    /* margin-top: 2%;
+    display: flexbox; */
 }
 
 #inputCadastroItem{
@@ -28,3 +30,55 @@
 #tabela{
     margin-left: 500px;
 }
+
+#alinharButton {
+    justify-content: center;
+    margin-top: 2%;
+}
+
+Button {
+  margin-right: 50px; 
+}
+
+#tabela{
+    /* align-content: center; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    width: 50%;
+    margin-left: 27%;
+}
+
+#btnDelete{
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbarEstoque{
+    width: 80%;
+    margin-left: 20%;
+    background-color: #1C5CBC;
+}
+
+#conteudoEstoque{
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 0%;
+    /* margin-bottom: 15%; */
+    /* margin-left: 15%; */
+    /* margin-right: 15%; */
+}
+
+#tabelaBoot{
+    /* text-align: center; */
+    /* margin-left: 50%; */
+}
+/* 
+#tabelaColumn{
+    text-align: center;
+    align-items: center;
+} */
