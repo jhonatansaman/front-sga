@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import api from '../services/api';
 // import 'font-awesome/css/font-awesome.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDolly, faHome, faUsersCog, faPeopleCarry, faClipboard } from '@fortawesome/fontawesome-free-solid'
+import { faDolly, faHome, faUsersCog, faPeopleCarry, faClipboard, faChartLine } from '@fortawesome/fontawesome-free-solid'
 
 
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
@@ -14,11 +14,23 @@ import Chart from "react-apexcharts";
 import Relatorio from './Relatorio';
 import Estoque from './Estoque';
 import UsuariosAdd from './UsuariosAdd';
-import GerarPdf from './GerarPdf';
-
+import Dashboard from './Dashboard';
 
 import './Home.css';
 import Retirada from './Retirada';
+
+var style = {
+    backgroundColor: "#F8F8F8",
+    borderTop: "1px solid #E7E7E7",
+    textAlign: "center",
+    padding: "20px",
+    position: "fixed",
+    left: "0",
+    bottom: "0",
+    height: "60px",
+    width: "100%",
+    // position: 'fixed'
+}
 
 class HomeAlmoxarifado extends Component {
 
@@ -44,7 +56,7 @@ class HomeAlmoxarifado extends Component {
                 data: [30, 40, 45, 50, 49, 60, 70]
             }
         ],
-        
+
     }
 
     async componentDidMount() {
@@ -129,6 +141,14 @@ class HomeAlmoxarifado extends Component {
                                             Home
                                         </NavText>
                                     </NavItem>
+                                    <NavItem eventKey="dashboard">
+                                        <NavIcon>
+                                            <FontAwesomeIcon icon={faChartLine} style={{ fontSize: '1.75em' }} />
+                                        </NavIcon>
+                                        <NavText>
+                                            Dashboard
+                                        </NavText>
+                                    </NavItem>
                                     <NavItem eventKey="usuariosAdd">
                                         <NavIcon>
                                             <FontAwesomeIcon icon={faUsersCog} style={{ fontSize: '1.75em' }} />
@@ -166,6 +186,7 @@ class HomeAlmoxarifado extends Component {
                             <main>
                                 {/* <Route path="/" exact component={props => <RootComponent />} /> */}
                                 {/* <Route path="/home" component={props => <HomeAlmoxarifado />} /> */}
+                                <Route path="/dashboard" component={props => <Dashboard />} />
                                 <Route path="/estoque" component={props => <Estoque />} />
                                 <Route path="/usuariosAdd" component={props => <UsuariosAdd />} />
                                 <Route path="/materiais" component={props => <Retirada />} />
@@ -177,14 +198,14 @@ class HomeAlmoxarifado extends Component {
                     />
                 </Router>
                 <div id="conteudo">
-                    
+
                     {/* <Chart
                         options={this.state.options}
                         series={this.state.series}
                         type="bar"
                         width="500"
                         style={{marginLeft: '10%', marginTop: '10%'}}
-                    /> */}
+                    />  */}
                     {/* 
                     <div id="g1">
 
@@ -194,11 +215,10 @@ class HomeAlmoxarifado extends Component {
                     </div> */
                     }
 
+                    <div style={style}>
+                        Centro de Ciências, Tecnologias e Saúde (CTS) | Secretaria de Apoio à Direção (SAD) | Contato: sad.cts.ara@contato.ufsc.br                 </div>
                 </div>
 
-                <footer id="footer">
-
-                </footer>
             </body>
         );
     }

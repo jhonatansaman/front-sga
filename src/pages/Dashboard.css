@@ -1,0 +1,31 @@
+#conteudoGrafico {
+    /* justify-content: center; */
+    text-align: center;
+    align-items: center;
+    display: flex;
+
+}
+#conteudoGrafico2{
+    display: flex;
+    align-items: center
+
+}
+
+#g1{
+    margin-top: 10%;
+    width: 550px;
+    height: 200px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+}
+
+#g2{
+    margin-top: 10%;
+    margin-left: 50px;
+    width: 550px;
+    height: 200px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+}

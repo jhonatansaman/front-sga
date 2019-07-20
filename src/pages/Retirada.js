@@ -105,21 +105,6 @@ class Retirada extends Component {
             arrayNomeMaterial: newNames
         })
 
-
-
-        // console.log("nome do material: ", this.state.nomeMaterial);
-
-        // const { data } = this.props.location;
-
-        // const response2 = await api.post('/posts/buscarUser', {
-        //     siape: data.siape,
-        // });
-
-        // await this.setState({
-        //     nome: data.nome,
-        //     email: data.email
-        // })
-
     }
 
     handleChange = selectedOption => {
@@ -428,26 +413,6 @@ class Retirada extends Component {
 
         return (
             <body>
-                {/* <nav id="navbar" className="nav navbar-nav navbar-right" >
-                    <p className="titulo">RETIRADA DE MATERIAL</p>
-                </nav>
-                <div id="wrapper" className="active">
-                    <div id="sidebar-wrapper">
-                        <ul id="sidebar_menu" className="sidebar-nav">
-                            <li className="sidebar-brand"><img src={require('../assets/logoUfsc.png')} width="50" height="90%" alt="" /></li>
-                        </ul>
-                        <ul className="sidebar-nav" id="sidebar">
-
-                            <a id="btnitens" onClick={() => this.entrarEstoque()}><li>Estoques</li></a>
-                            <a id="btnitens" onClick={() => this.entrarAddUser()}><li>Usuários</li></a>
-                            <a id="btnitens"><li>Materiais</li></a>
-                            <a id="btnitens" onClick={() => this.entrarRelatorio()}><li>Relatórios</li></a>
-
-                        </ul>
-
-                    </div>
-                </div> */}
-
                 <Modal show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Atenção</Modal.Title>
@@ -465,10 +430,11 @@ class Retirada extends Component {
 
                 <Navbar id="navBoot" variant="dark">
                     <img id="logoUfsc" src={logoUfsc} />
-
+                    <div style={{justifyContent: 'center'}}>
+                        {/* <p style={{ alignContent: 'center',  textAlign: 'center' }}>Retirada</p> */}
+                    </div>
                     {/* <Navbar.Brand href="#home">Navbar</Navbar.Brand> */}
                 </Navbar>
-
 
                 <div id="conteudo">
                     <Form className="formulario">
@@ -518,14 +484,10 @@ class Retirada extends Component {
                             Adicionar ao Carrinho
                         </Button>
 
-                        {/* <Button variant="outline-primary" onClick={() => this.createAndDownloadPdf()}>
-                            Teste Relatório
-                        </Button> */}
-
                         <Button variant="outline-success" onClick={this.handleShow} disabled={this.state.analisarButton}>
                             Confirmar Solicitação
                         </Button>
-
+                        
                         <Table striped bordered hover id="tabela2">
                             <thead>
                                 <tr>

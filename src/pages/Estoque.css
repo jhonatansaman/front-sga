@@ -4,10 +4,8 @@
 #conteudo {
     justify-content: center;
     text-align: center;
-    /* margin-left: 140px; */
-    /* margin-left: 15%; */
-    /* margin-right: 10%; */
-
+    min-height: 100%;
+    margin-bottom: -50px;
 }
 
 #tituloNav{

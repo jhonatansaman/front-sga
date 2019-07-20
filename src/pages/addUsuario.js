@@ -4,32 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDolly, faUsersCog, faPeopleCarry, faClipboard } from '@fortawesome/free-solid-svg-icons';
 import { Modal, Form, Table, Navbar, Nav, NavDropdown, FormControl, Col, Button } from 'react-bootstrap';
 import Select from 'react-select';
-// import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-import BootstrapTable from 'react-bootstrap-table-next';
-import paginator from 'react-bootstrap-table2-paginator';
 
 import './Home.css';
 import './addUsuario.css';
-import logoUfsc from '../assets/logoUfsc.png'
-
 
 const options = [
     { value: 'servidor', label: 'Servidor' },
     { value: 'outros', label: 'Outros' },
 ];
 
-const columns = [{
-    dataField: 'siape',
-    text: 'Siape'
-}, {
-    dataField: 'nome',
-    text: 'Nome'
-}, {
-    dataField: 'email',
-    text: 'E-mail'
-}];
-
-class UsuariosAdd extends Component {
+class addUsuario extends Component {
 
     constructor() {
         super();
@@ -53,12 +37,12 @@ class UsuariosAdd extends Component {
         selectedOption: null,
         usuarios: [],
         modalShow: false,
-        search: '',
+        search: ''
 
     }
 
     async componentDidMount() {
-        // const { data } = this.props.location;
+        const { data } = this.props.location;
 
         const response = await api.get('/posts/showUser');
 
@@ -183,12 +167,6 @@ class UsuariosAdd extends Component {
 
     }
 
-
-    pegarId = async (id) => {
-        console.log("o id é: ", id);
-
-    }
-
     pesquisar(event) {
         this.setState({ search: event.target.value })
     }
@@ -201,6 +179,26 @@ class UsuariosAdd extends Component {
         return (
             <body>
 
+                {/* <nav id="navbar" className="nav navbar-nav navbar-right" >
+                    <p className="titulo">Usuários</p>
+                </nav> */}
+
+                <div id="wrapper" className="active">
+                    <div id="sidebar-wrapper">
+                        <ul id="sidebar_menu" className="sidebar-nav">
+                            <li className="sidebar-brand"><img src={require('../assets/logoUfsc.png')} width="50" height="90%" alt="" /></li>
+                        </ul>
+                        <ul className="sidebar-nav" id="sidebar">
+
+                            <a id="btnitens" onClick={() => this.entrarEstoque()}><li>Estoques</li></a>
+                            <a id="btnitens" onClick={() => this.entrarAddUser()}><li>Usuários</li></a>
+                            <a id="btnitens" onClick={() => this.entrarMateriais()}><li>Materiais</li></a>
+                            <a id="btnitens" onClick={() => this.entrarRelatorio()}><li>Relatórios</li></a>
+
+                        </ul>
+                    </div>
+                </div>
+                
                 <Modal
                     // {...this.props}
                     size="lg"
@@ -257,7 +255,7 @@ class UsuariosAdd extends Component {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="outline-primary" onClick={() => this.adicionarUsuario()}>
-                            Adicionar Usuário
+                        Adicionar Usuário
                         </Button>
                         <Button variant="outline-danger" onClick={this.props.onHide}>Fechar</Button>
                     </Modal.Footer>
@@ -265,29 +263,25 @@ class UsuariosAdd extends Component {
 
 
                 <Navbar id="navBoot" variant="dark">
-                    <img id="logoUfsc" src={logoUfsc} />
-
-                    {/* <Navbar.Brand href="#home">Navbar</Navbar.Brand> */}
+                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
                     <Nav className="mr-auto">
-                        <Nav.Link id="navLink" >
-                            <Button variant="btn btn-outline-light" onClick={() => this.setState({ modalShow: true })}>
-                                Adicionar Usuário
-                            </Button>
-                            {/* <a id="adicionarUser" onClick={() => this.setState({ modalShow: true })}><p id="btn-adicionar">Adicionar Usuário</p></a> */}
-                        </Nav.Link>
+                        <Nav.Link id="navLink" href="#home"><p>Listar Usuários</p></Nav.Link>
+                        <Nav.Link id="navLink" href="#features"><a onClick={() => this.setState({ modalShow: true })}><p>Adicionar Usuário</p></a></Nav.Link>
                     </Nav>
                     <Form inline>
-                        <FormControl type="text" onChange={this.pesquisar} placeholder="Pesquisar..." className="mr-sm-2" />
-                        <Button variant="btn btn-outline-light" onClick={() => this.filtrar()}>Pesquisar</Button>
+                        <FormControl type="text" onChange={this.pesquisar}  placeholder="Pesquisar..." className="mr-sm-2" />
+                        <Button variant="outline-info" onClick={() => this.filtrar()}>Pesquisar</Button>
                     </Form>
                 </Navbar>
+                <br />
 
 
-                <div id="conteudoUsuario">
-                    {/* 
+                <div id="conteudo">
+
                     <Table striped bordered hover id="tabela2">
                         <thead>
                             <tr>
+                                {/* <th id="btnDelete"></th> */}
                                 <th>SIAPE</th>
                                 <th>Nome</th>
                                 <th>E-mail</th>
@@ -305,16 +299,7 @@ class UsuariosAdd extends Component {
                             })
                             }
                         </tbody>
-                    </Table> */}
-                    <BootstrapTable keyField='id' pagination={paginator()} data={this.state.usuarios} columns={columns} />
-
-                    {/* <BootstrapTable
-                        data={this.state.usuarios}
-                        pagination>
-                        <TableHeaderColumn dataField='siape' isKey>SIAPE</TableHeaderColumn>
-                        <TableHeaderColumn dataField='nome'>Nome</TableHeaderColumn>
-                        <TableHeaderColumn dataField='email'>E-mail</TableHeaderColumn>
-                    </BootstrapTable> */}
+                    </Table>
 
                 </div>
             </body >
@@ -322,4 +307,4 @@ class UsuariosAdd extends Component {
     }
 }
 
-export default UsuariosAdd;
+export default addUsuario;

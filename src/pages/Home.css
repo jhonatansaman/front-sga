@@ -132,19 +132,21 @@
 
 #g1{
     margin-top: 100px;
-    width: 500px;
+    width: 400px;
     height: 200px;
     border: 1px solid gray;
     border-radius: 10px;
+    display: flex;
 }
 
 #g2{
     margin-top: 100px;
     margin-left: 50px;
-    width: 500px;
+    width: 400px;
     height: 200px;
     border: 1px solid gray;
     border-radius: 10px;
+    display: flex;
 }
 
 #g3{
@@ -168,28 +170,12 @@
     position: fixed;
 }
 }
-
-/* #conteudo{
-    padding: 20px;
-    padding-bottom: 50px;
-} */
-
-/* #footer{
-    border: 1px solid gray;
-    height: 80px;
-} */
-
-  /* html {
+html, body {
     height: 100%;
+    margin: 0;
   }
 
-  body {
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: 1fr auto;
-  } */
-/* 
-  .footer {
-    grid-row-start: 2;
-    grid-row-end: 3;
-  } */
+.footer,
+    .push {
+      height: 50px;
+    }

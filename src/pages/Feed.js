@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import FormGroup from 'react-bootstrap/FormGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import { Link } from 'react-router-dom';
-import  { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { Modal, Form } from 'react-bootstrap';
@@ -29,6 +29,19 @@ const customStyles = {
         transform: 'translate(-50%, -50%)',
     }
 };
+
+var style = {
+    backgroundColor: "#F8F8F8",
+    borderTop: "1px solid #E7E7E7",
+    textAlign: "center",
+    padding: "20px",
+    position: "fixed",
+    left: "0",
+    bottom: "0",
+    height: "60px",
+    width: "100%",
+}
+
 
 class Feed extends Component {
 
@@ -86,7 +99,7 @@ class Feed extends Component {
 
         if (response.data == 1) {
             alert("Login efetuado com sucesso!");
-            
+
             this.props.history.push({
                 pathname: "/home",
                 data: this.state.siape
@@ -119,8 +132,8 @@ class Feed extends Component {
                         <p id="titulo">SISTEMA DE GERENCIAMENTO UFSC - CAMPUS ARARANGUÁ</p>
                     </div>
                 </header>
-                <section id="testebody">
-            
+                {/* <section id="testebody"> */}
+
 
                 <Modal
                     // {...this.props}
@@ -147,7 +160,7 @@ class Feed extends Component {
 
                             <Form.Group controlId="formBasicPassword">
                                 <Form.Label>Senha</Form.Label>
-                                <Form.Control onChange={this.updateInput2} type="password" placeholder="Senha" / >
+                                <Form.Control onChange={this.updateInput2} type="password" placeholder="Senha" />
                             </Form.Group>
                             <Button variant="primary" onClick={this.testar}>
                                 Entrar
@@ -158,16 +171,18 @@ class Feed extends Component {
                         <Button onClick={this.props.onHide}>Fechar</Button>
                     </Modal.Footer>
                 </Modal>
-                   
-                    <div id="container">
-                        <div id="s1">
-                            <p id="subtitle" ><a id="link" onClick={() => this.setState({ modalShow: true })}>ALMOXARIFADO</a></p>
-                        </div>
-                        <div id="s2">
-                            <p id="subtitle" ><a id="link" onClick={() => this.testar()}>EMPRÉSTIMO DE MATERIAIS</a></p>
-                        </div>
+
+                <div id="container">
+                    <div id="s1">
+                        <p id="subtitle" ><a id="link" onClick={() => this.setState({ modalShow: true })}>ALMOXARIFADO</a></p>
                     </div>
-                </section>
+                    <div id="s2">
+                        <p id="subtitle" ><a id="link" onClick={() => this.testar()}>EMPRÉSTIMO DE MATERIAIS</a></p>
+                    </div>
+                    <div style={style}>
+                    Centro de Ciências, Tecnologias e Saúde (CTS) | Secretaria de Apoio à Direção (SAD) | Contato: sad.cts.ara@contato.ufsc.br                    </div>
+                </div>
+                {/* </section> */}
             </html >
         );
     }
