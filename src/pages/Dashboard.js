@@ -156,7 +156,7 @@ class Dashboard extends Component {
                             options={this.state.options}
                             series={this.state.series}
                             type="bar"
-                            width="500"
+                            // width="250"
                             style={{ marginLeft: '10%'}}
                             id="g1"
                         />
@@ -172,7 +172,8 @@ class Dashboard extends Component {
 
                     />  */}
 
-                        <Chart id="g2" options={this.state.options2} series={this.state.series2} type="line" width="500" />
+                        <Chart
+                         id="g2" options={this.state.options2} series={this.state.series2} type="line"  />
 
                     </div>
 

@@ -71,12 +71,16 @@ Button {
     /* margin-right: 15%; */
 }
 
-#tabelaBoot{
-    /* text-align: center; */
-    /* margin-left: 50%; */
-}
-/* 
-#tabelaColumn{
-    text-align: center;
-    align-items: center;
-} */
+@media only screen and (max-device-width: 900px) {
+    #conteudo {
+        justify-content: center;
+        text-align: center;
+        margin-left: 10%;
+        min-height: 100%;
+        margin-bottom: -50px;
+        font-size: 12px;
+    }
+
+  }
+
+

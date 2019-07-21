@@ -23,3 +23,14 @@ p{
     /* margin-left: 15%; */
     /* margin-right: 15%; */
 }
+
+@media only screen and (max-device-width: 900px) {
+    .sidebar-nav > .sidebar-brand {
+
+        height: 65px;
+        line-height: 60px;
+        font-size: 10px;
+      }
+
+}
+

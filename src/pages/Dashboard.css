@@ -1,15 +1,17 @@
 #conteudoGrafico {
-    /* justify-content: center; */
+    justify-content: center;
     text-align: center;
     align-items: center;
     display: flex;
 
 }
 #conteudoGrafico2{
-    display: flex;
+    flex-direction: column-reverse;
     align-items: center
 
 }
+
+
 
 #g1{
     margin-top: 10%;
@@ -29,3 +31,25 @@
     border-radius: 10px;
     display: flex;
 }
+
+@media only screen and (max-device-width: 900px) {
+  
+    
+    #g1{
+        margin-top: 10%;
+        width: 250px;
+        height: 200px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        display: flex;
+    }
+    
+    #g2{
+        margin-top: 10%;
+        width: 250px;
+        height: 200px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        display: flex;
+    }
+  }
