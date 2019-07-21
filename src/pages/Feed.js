@@ -18,6 +18,7 @@ import io from 'socket.io-client';
 import './Feed.css';
 import logoUfsc from '../assets/logoUfsc.png'
 import Background from '../assets/background-159244_1280.png';
+import Header from '../components/Header';
 
 const customStyles = {
     content: {
@@ -125,15 +126,8 @@ class Feed extends Component {
         let modalClose = () => this.setState({ modalShow: false });
 
         return (
-            <html>
-                <header id="main-header">
-                    <div className="header-content">
-                        <img id="logoUfsc" src={logoUfsc} alt="InstaRocket" />
-                        <p id="titulo">SISTEMA DE GERENCIAMENTO UFSC - CAMPUS ARARANGUÁ</p>
-                    </div>
-                </header>
-                {/* <section id="testebody"> */}
-
+            <div>
+                <Header />
 
                 <Modal
                     // {...this.props}
@@ -183,8 +177,7 @@ class Feed extends Component {
                             Centro de Ciências, Tecnologias e Saúde (CTS) | Secretaria de Apoio à Direção (SAD) |</div>
                     </div>
                 </div>
-                {/* </section> */}
-            </html >
+            </div>
         );
     }
 }

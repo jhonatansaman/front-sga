@@ -5,6 +5,7 @@ header#main-header {
     border-bottom: 1px solid #DDD;
 }
 
+
 header#main-header .header-content {
     width: 100%;
     /* max-width: 980px; */
@@ -32,3 +33,30 @@ header#main-header .header-content {
     margin-top: 3%;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@media only screen and (max-device-width: 900px) {
+
+    header#main-header {
+        background: #142B70;
+        height: 80px;
+        width: 100%;
+        border-bottom: 1px solid #DDD;
+    }
+    
+    #logoUfsc {
+        width: 40px;
+        height: 45px;
+        margin-left: 6%;
+        /* margin-top: 2%; */
+    }
+
+    #titulo {
+        /* display: flex; */
+        font-size: 13px;
+        margin-left: 15%;
+        color: #fff;
+        margin-top: 3%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+  }
