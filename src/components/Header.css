@@ -1,12 +1,13 @@
 header#main-header {
     background: #142B70;
     height: 100px;
+    width: 100%;
     border-bottom: 1px solid #DDD;
 }
 
 header#main-header .header-content {
     width: 100%;
-    max-width: 980px;
+    /* max-width: 980px; */
     /* margin: 0 auto; */
     height: 72px;
     /* padding: 0 30px; */

@@ -171,16 +171,17 @@ class Feed extends Component {
                         <Button onClick={this.props.onHide}>Fechar</Button>
                     </Modal.Footer>
                 </Modal>
-
-                <div id="container">
-                    <div id="s1">
-                        <p id="subtitle" ><a id="link" onClick={() => this.setState({ modalShow: true })}>ALMOXARIFADO</a></p>
+                <div id="containerPrincipal">
+                    <div id="container">
+                        <div id="s1">
+                            <p id="subtitle" ><a id="link" onClick={() => this.setState({ modalShow: true })}>ALMOXARIFADO</a></p>
+                        </div>
+                        <div id="s2">
+                            <p id="subtitle" ><a id="link" onClick={() => this.testar()}>EMPRÉSTIMO DE MATERIAIS</a></p>
+                        </div>
+                        <div style={style}>
+                            Centro de Ciências, Tecnologias e Saúde (CTS) | Secretaria de Apoio à Direção (SAD) |</div>
                     </div>
-                    <div id="s2">
-                        <p id="subtitle" ><a id="link" onClick={() => this.testar()}>EMPRÉSTIMO DE MATERIAIS</a></p>
-                    </div>
-                    <div style={style}>
-                    Centro de Ciências, Tecnologias e Saúde (CTS) | Secretaria de Apoio à Direção (SAD) | Contato: sad.cts.ara@contato.ufsc.br                    </div>
                 </div>
                 {/* </section> */}
             </html >
