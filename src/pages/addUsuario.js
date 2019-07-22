@@ -13,6 +13,12 @@ const options = [
     { value: 'outros', label: 'Outros' },
 ];
 
+const pagination = paginationFactory({
+    sizePerPageList: [{
+        text: 'show 5', value: 5
+      }]  
+});
+
 class addUsuario extends Component {
 
     constructor() {
@@ -162,9 +168,6 @@ class addUsuario extends Component {
                 usuarios: ['']
             })
         }
-
-
-
     }
 
     pesquisar(event) {

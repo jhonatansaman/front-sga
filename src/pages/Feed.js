@@ -96,15 +96,19 @@ class Feed extends Component {
             senha: this.state.senha
         });
 
-        console.log(response);
-
         if (response.data == 1) {
-            alert("Login efetuado com sucesso!");
-
-            this.props.history.push({
-                pathname: "/home",
-                data: this.state.siape
-            });
+            if (this.state.siape == 1635680) {
+                alert("Login efetuado com sucesso!");
+                this.props.history.push({
+                    pathname: "/home",
+                    data: this.state.siape
+                });
+            } else {
+                this.props.history.push({
+                    pathname: "/homeUsuario",
+                    data: this.state.siape
+                });
+            }
         } else {
             alert("Login ou senha inválidos!")
         }

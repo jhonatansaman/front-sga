@@ -32,7 +32,7 @@ var style = {
     // position: 'fixed'
 }
 
-class HomeAlmoxarifado extends Component {
+class HomeUsuario extends Component {
 
     state = {
         image: null,
@@ -153,36 +153,12 @@ class HomeAlmoxarifado extends Component {
                                             Home
                                         </NavText>
                                     </NavItem>
-                                    <NavItem eventKey="dashboard">
-                                        <NavIcon>
-                                            <FontAwesomeIcon icon={faChartLine} style={{ fontSize: '1.75em' }} />
-                                        </NavIcon>
-                                        <NavText>
-                                            Dashboard
-                                        </NavText>
-                                    </NavItem>
-                                    <NavItem eventKey="usuariosAdd">
-                                        <NavIcon>
-                                            <FontAwesomeIcon icon={faUsersCog} style={{ fontSize: '1.75em' }} />
-                                        </NavIcon>
-                                        <NavText>
-                                            Usuários
-                                        </NavText>
-                                    </NavItem>
                                     <NavItem eventKey="estoque">
                                         <NavIcon>
                                             <FontAwesomeIcon icon={faDolly} style={{ fontSize: '1.75em' }} />
                                         </NavIcon>
                                         <NavText>
                                             Estoque
-                                        </NavText>
-                                    </NavItem>
-                                    <NavItem eventKey="materiais">
-                                        <NavIcon>
-                                            <FontAwesomeIcon icon={faPeopleCarry} style={{ fontSize: '1.75em' }} />
-                                        </NavIcon>
-                                        <NavText>
-                                            Retirada
                                         </NavText>
                                     </NavItem>
                                     <NavItem eventKey="devices">
@@ -198,10 +174,7 @@ class HomeAlmoxarifado extends Component {
                             <main>
                                 {/* <Route path="/" exact component={props => <RootComponent />} /> */}
                                 {/* <Route path="/home" component={props => <HomeAlmoxarifado />} /> */}
-                                <Route path="/dashboard" component={props => <Dashboard />} />
                                 <Route path="/estoque" component={props => <Estoque />} />
-                                <Route path="/usuariosAdd" component={props => <UsuariosAdd />} />
-                                <Route path="/materiais" component={props => <Retirada />} />
                                 <Route path="/devices" component={props => <Relatorio />} />
                                 {/* <Route path="/pdf" component={props => <GerarPdf />} /> */}
                             </main>
@@ -236,4 +209,4 @@ class HomeAlmoxarifado extends Component {
     }
 }
 
-export default HomeAlmoxarifado;
+export default HomeUsuario;

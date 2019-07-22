@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Feed from './pages/Feed';
 import HomeAlmoxarifado from './pages/HomeAlmoxarifado';
+import HomeUsuario from './pages/HomeUsuario';
 import Relatorio from './pages/Relatorio';
 import Estoque from './pages/Estoque';
 import New from './pages/New';
@@ -16,6 +17,7 @@ function Router() {
         <Switch>
             <Route path="/" exact component={Feed} /> 
             <Route path="/home" component={HomeAlmoxarifado} />
+            <Route path="/homeUsuario" component={HomeUsuario} />
             <Route path="/new" component={New} />
             <Route path="/estoque" component={Estoque} />
             <Route path="/retirada" component={Retirada} />

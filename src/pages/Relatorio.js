@@ -31,7 +31,7 @@ const pagination = paginationFactory({
     sizePerPageList: [{
         text: 'show 5', value: 5
       }]  
-    });
+});
 
 const options = [
     { value: '1', label: 'Escolha' },
@@ -145,7 +145,6 @@ const print = (props) => {
     // pdf.fromHTML(string);
     pdf.save("pdf");
 };
-
 
 const columns = [{
     dataField: 'siape',
@@ -351,6 +350,9 @@ class Relatorio extends Component {
             siape: this.state.siape
         })
 
+        console.log("response relatório usuário: ", response.data);
+        
+
         this.setState({ arrayBuscaUsuario: response.data })
 
         console.log("busca pelo material: ", this.state.arrayBuscaUsuario);
@@ -527,7 +529,7 @@ class Relatorio extends Component {
                                 <br />
 
                                 <div id="gerarPdf" >
-                                    <BootstrapTable keyField='id' pagination={paginator()} data={this.state.arrayBuscaUsuario} columns={columns} /> <br />
+                                    <BootstrapTable keyField='id' pagination={ pagination } data={this.state.arrayBuscaUsuario} columns={columns} /> <br />
                                 </div>
                             </Form>
                             :
@@ -567,7 +569,7 @@ class Relatorio extends Component {
                                 <br />
 
                                 <div id="gerarPdf" >
-                                    <BootstrapTable keyField='id' data={this.state.arrayBuscaMaterial} columns={columns} /> <br />
+                                    <BootstrapTable keyField='id' pagination={ pagination } data={this.state.arrayBuscaMaterial} columns={columns} /> <br />
                                 </div>
                             </Form>
                     }
